@@ -1,16 +1,17 @@
 import {getBooks} from './book.js';
+import {addCart} from './book.js';
 
 const url = "https://striveschool-api.herokuapp.com/books";
 const all = document.querySelector("#all");
 const books = [];
 const cart = [];
 
-const addCart = (event,id) => {
-console.log(id);
-	const book = books.find(item => item.asin === id);
-	cart.push(book);
-	console.log(cart.length);
-}
+// const addCart = (event,id) => {
+// console.log(id);
+// 	const book = books.find(item => item.asin === id);
+// 	cart.push(book);
+// 	console.log(cart.length);
+// }
 
 const showCart = () => {
 	console.log(cart);

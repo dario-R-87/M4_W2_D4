@@ -13,3 +13,10 @@ export const getBooks = (item) => {
     </div>
 `;
 }
+
+export const addCart = (event,id) => {
+  console.log(id);
+    const book = books.find(item => item.asin === id);
+    cart.push(book);
+    console.log(cart.length);
+  }
