@@ -10,11 +10,11 @@ export const getBooks = (url) => {
       return res.json();
     })
     .then((items) => {
-      console.log(items);
       items.forEach((item) => {
         all.innerHTML += getCard(item);
-        books.push(item);
+        books.push({ ...item, selected: false });
       });
+      console.log(books);
     })
     .catch((error) => console.error(error));
 };

@@ -22,6 +22,8 @@ window.addCart = (event, id) => {
   console.log(event.target);
   if (cart.findIndex((item) => item.asin === id) === -1) {
     const book = books.find((item) => item.asin === id);
+    const index = books.findIndex((item) => item.asin === book.asin);
+    books[index].selected = true;
     cart.push(book);
     console.log(cart.length);
     const add = event.target;
@@ -33,6 +35,7 @@ window.addCart = (event, id) => {
   let listGroup = listItem.parentNode;
   let cardDiv = listGroup.parentNode;
   cardDiv.classList.add("added");
+  console.log(books);
 };
 
 window.removeCart = (event, id) => {
