@@ -7,7 +7,10 @@ export const getCard = (book) => {
          <h5 class="card-title text-truncate">${book.title}</h5>
         </div>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">${book.price} <button class="" onclick="addCart(event,'${book.asin}')">Add to Cart</button></li>
+        <li class="list-group-item d-flex justify-content-between">$ ${book.price}
+         <button id="add" class="" onclick="addCart(event,'${book.asin}')">Add</button>
+         <button id="rem" class="d-none" onclick="removeCart(event,'${book.asin}')">Remove</button>
+         </li>
        </ul>
       </div>
     </div>
