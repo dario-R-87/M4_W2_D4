@@ -5,3 +5,7 @@ img {
 .added {
   border: 3px solid red !important;
 }
+
+.card-title {
+  height: 150px;
+}

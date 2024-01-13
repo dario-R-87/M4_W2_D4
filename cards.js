@@ -4,7 +4,7 @@ export const getCard = (book) => {
      <div class="card mt-4">
         <div class="ratio ratio-16x9"><img src=${book.img} class="card-img-top" alt="image" /></div>
         <div class="card-body">
-         <h5 class="card-title text-truncate">${book.title}</h5>
+         <h5 class="card-title">${book.title}</h5>
         </div>
         <ul class="list-group list-group-flush">
         <li class="list-group-item d-flex justify-content-between">$ ${book.price}
