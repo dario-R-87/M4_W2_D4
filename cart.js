@@ -7,19 +7,14 @@ export const showCart = () => {
     "#exampleModalLabel"
   ).innerHTML = `Carrello (${cart.length})`;
   const body = document.querySelector(".modal-body");
-  for (let i = 0; i < cart.length; i++) {
-    // if (albums[i].artist === artist)
-    //   for (let y = 0; y < albums[i].albums.length; y++) {
-    //     document.querySelector(
-    //       ".modal-body"
-    //     ).innerHTML += `<div>${albums[i].albums[y]}</div>`;
-    //   }
-  }
   body.innerHTML = `<ul>`;
   cart.forEach((item) => {
     body.innerHTML += `<li>${item.title}</li>`;
   });
   body.innerHTML += `</ul>`;
+  const totalAmount = cart.reduce((acc, item) => acc + item.price, 0);
+  const tot = document.querySelector("#tot");
+  tot.innerHTML = "Total Amount: $ " + totalAmount.toFixed(2);
 };
 
 window.addCart = (event, id) => {

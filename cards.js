@@ -7,12 +7,22 @@ export const getCard = (book) => {
          <h5 class="card-title">${book.title}</h5>
         </div>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item d-flex justify-content-between">$ ${book.price}
-         <button id="add" class="" onclick="addCart(event,'${book.asin}')">Add</button>
-         <button id="rem" class="d-none" onclick="removeCart(event,'${book.asin}')">Remove</button>
+        <li class="list-group-item d-flex justify-content-between fw-bold align-items-center">
+        <div>$ ${book.price}</div>
+        <button id="rem" class="btn btn-primary" onclick="skip(event)">Skip</button>
+         <button id="add" class="btn btn-primary" onclick="addCart(event,'${book.asin}')">Add</button>
+         <button id="rem" class="btn btn-primary d-none" onclick="removeCart(event,'${book.asin}')">Rem</button>
          </li>
        </ul>
       </div>
     </div>
 `;
+};
+
+window.skip = (event) => {
+  let listItem = event.target.closest(".list-group-item");
+  let listGroup = listItem.parentNode;
+  let cardDiv = listGroup.parentNode;
+  let cardWrapper = cardDiv.parentNode;
+  cardWrapper.classList.add("d-none");
 };
