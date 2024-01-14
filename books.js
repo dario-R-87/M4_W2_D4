@@ -22,7 +22,7 @@ export const getBooks = (url) => {
 export const searchBook = (str) => {
   console.log(str);
   const finded = books.filter((book) => {
-    return book.title.toLowerCase().indexOf(str.toLowerCase()) !== -1;
+    return book.title.toLowerCase().indexOf(str.trim().toLowerCase()) !== -1;
   });
   all.innerHTML = "";
   console.log(finded);
@@ -30,3 +30,11 @@ export const searchBook = (str) => {
     all.innerHTML += getCard(item);
   });
 };
+
+const close = document.querySelector("#close");
+close.addEventListener("click", () => {
+  all.innerHTML = "";
+  books.forEach((book) => {
+    all.innerHTML += getCard(book);
+  });
+});

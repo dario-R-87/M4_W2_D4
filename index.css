@@ -9,3 +9,8 @@ img {
 .card-title {
   height: 150px;
 }
+
+/* :root {
+  --bs-primary-rgb: 48, 74, 74;
+  --bs-bg-opacity: 0.5;
+} */

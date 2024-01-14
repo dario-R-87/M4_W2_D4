@@ -10,14 +10,16 @@ export const getCard = (book) => {
         </div>
         <ul class="list-group list-group-flush">
         <li class="list-group-item d-flex justify-content-between fw-bold align-items-center">
-        <div>$ ${book.price}</div>
-        <button id="rem" class="btn btn-primary" onclick="skip(event)">Skip</button>
-         <button id="add" class="btn btn-primary" onclick="addCart(event,'${
-           book.asin
-         }')">Add</button>
-         <button id="rem" class="btn btn-primary d-none" onclick="removeCart(event,'${
-           book.asin
-         }')">Rem</button>
+        <div>$ ${book.price.toFixed(2)}</div>
+        <button id="skip" class="btn btn-primary ${
+          book.selected && "d-none"
+        }" onclick="skip(event)">Skip</button>
+         <button id="add" class="btn btn-primary ${
+           book.selected && "d-none"
+         }" onclick="addCart(event,'${book.asin}')">Add</button>
+         <button id="rem" class="btn btn-primary ${
+           !book.selected && "d-none"
+         }" onclick="removeCart(event,'${book.asin}')">Rem</button>
          </li>
        </ul>
       </div>
