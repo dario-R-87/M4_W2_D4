@@ -20,8 +20,10 @@ export const showCart = () => {
 
 export const empty = () => {
   cart = [];
+  all.innerHTML = "";
   books.forEach((book) => {
     book.selected = false;
+    all.innerHTML += getCard(book);
   });
   showCart();
   console.log(books);

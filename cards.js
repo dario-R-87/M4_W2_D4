@@ -11,7 +11,7 @@ export const getCard = (book) => {
         <ul class="list-group list-group-flush">
         <li class="list-group-item d-flex justify-content-between fw-bold align-items-center">
         <div>$ ${book.price.toFixed(2)}</div>
-        <button id="skip" class="btn btn-primary ${
+        <button  class="skip btn btn-primary ${
           book.selected && "d-none"
         }" onclick="skip(event)">Skip</button>
          <button id="add" class="btn btn-primary ${
@@ -34,3 +34,6 @@ window.skip = (event) => {
   let cardWrapper = cardDiv.parentNode;
   cardWrapper.classList.add("d-none");
 };
+
+const skips = document.querySelectorAll("button.skip");
+console.log(skips);
