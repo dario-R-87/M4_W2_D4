@@ -30,19 +30,15 @@ export const empty = () => {
     all.innerHTML += getCard(book);
   });
   showCart();
-  console.log(books);
 };
 
 window.addCart = (event, id) => {
-  console.log(id);
-  console.log(event.target);
   const indexCart = cart.findIndex((item) => item.asin === id);
   if (indexCart === -1) {
     const book = books.find((item) => item.asin === id);
     const index = books.findIndex((item) => item.asin === book.asin);
     books[index].selected = true;
     cart.push(book);
-    console.log(cart.length);
     const add = event.target;
     add.classList.add("d-none");
     const rem = add.nextElementSibling;
@@ -55,13 +51,11 @@ window.addCart = (event, id) => {
   let cardDiv = listGroup.parentNode;
   cardDiv.classList.add("added");
   cartQt.innerHTML = "(" + cart.length + ")";
-  console.log(books);
 };
 
 window.removeCart = (event, id) => {
   if (cart.findIndex((item) => item.asin === id >= 0)) {
     cart = cart.filter((book) => book.asin !== id);
-    console.log(cart.length);
     const index = books.findIndex((item) => item.asin === id);
     books[index].selected = false;
     const rem = event.target;
