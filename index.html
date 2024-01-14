@@ -8,6 +8,14 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="./index.js" type="module"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Books Shop</title>
@@ -69,12 +77,13 @@
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
         >
-          Show Cart
+          <ion-icon name="cart-outline"></ion-icon>
+          <span>(0)</span>
         </button>
         <input type="search" id="search" placeholder="Cerca..." />
       </div>
 
-      <h1 class="mt-5 mb-0 mx-3 text-info">Libri Disponibili</h1>
+      <h1 class="mt-5 mb-0 mx-3">Libri Disponibili</h1>
       <div class="my-5 row text-light px-3" id="all"></div>
     </div>
   </body>

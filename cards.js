@@ -14,10 +14,10 @@ export const getCard = (book) => {
         <button  class="skip btn btn-primary ${
           book.selected && "d-none"
         }" onclick="skip(event)">Skip</button>
-         <button id="add" class="btn btn-primary ${
+         <button id="" class="add btn btn-primary ${
            book.selected && "d-none"
          }" onclick="addCart(event,'${book.asin}')">Add</button>
-         <button id="rem" class="btn btn-primary ${
+         <button id="" class="rem btn btn-primary ${
            !book.selected && "d-none"
          }" onclick="removeCart(event,'${book.asin}')">Rem</button>
          </li>
@@ -34,6 +34,3 @@ window.skip = (event) => {
   let cardWrapper = cardDiv.parentNode;
   cardWrapper.classList.add("d-none");
 };
-
-const skips = document.querySelectorAll("button.skip");
-console.log(skips);

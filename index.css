@@ -3,13 +3,31 @@ img {
 }
 
 .added {
-  border: 3px solid red !important;
+  border: 5px solid rgb(0, 102, 255) !important;
 }
 
 .card-title {
   height: 150px;
 }
 
+#cart,
+.skip,
+.add,
+.rem {
+  background-color: rgb(56, 146, 139) !important;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: rgb(56, 146, 139) !important;
+}
+
+#cart span {
+  font-size: 26px;
+}
 /* :root {
   --bs-primary-rgb: 48, 74, 74;
   --bs-bg-opacity: 0.5;

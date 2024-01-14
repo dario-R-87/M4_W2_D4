@@ -2,6 +2,7 @@ import { books } from "./books.js";
 import { getCard } from "./cards.js";
 
 let cart = [];
+const cartQt = document.querySelector("#cart span");
 
 export const showCart = () => {
   document.querySelector(
@@ -21,6 +22,9 @@ export const showCart = () => {
 export const empty = () => {
   cart = [];
   all.innerHTML = "";
+  cartQt.innerHTML = "(0)";
+  const search = document.querySelector("#search");
+  search.value = "";
   books.forEach((book) => {
     book.selected = false;
     all.innerHTML += getCard(book);
@@ -50,12 +54,12 @@ window.addCart = (event, id) => {
   let listGroup = listItem.parentNode;
   let cardDiv = listGroup.parentNode;
   cardDiv.classList.add("added");
+  cartQt.innerHTML = "(" + cart.length + ")";
   console.log(books);
 };
 
 window.removeCart = (event, id) => {
   if (cart.findIndex((item) => item.asin === id >= 0)) {
-    //const book = books.find((item) => item.asin === id);
     cart = cart.filter((book) => book.asin !== id);
     console.log(cart.length);
     const index = books.findIndex((item) => item.asin === id);
@@ -67,9 +71,9 @@ window.removeCart = (event, id) => {
     const skip = add.previousElementSibling;
     skip.classList.remove("d-none");
   }
-  //let listItem = event.target.closest(".list-group-item");
   let listItem = event.target.parentNode;
   let listGroup = listItem.parentNode;
   let cardDiv = listGroup.parentNode;
+  cartQt.innerHTML = "(" + cart.length + ")";
   cardDiv.classList.remove("added");
 };

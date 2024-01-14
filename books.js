@@ -1,6 +1,6 @@
 import { getCard } from "./cards.js";
 
-export const books = [];
+export let books = [];
 
 export const getBooks = (url) => {
   const all = document.querySelector("#all");
@@ -10,9 +10,13 @@ export const getBooks = (url) => {
       return res.json();
     })
     .then((items) => {
-      items.forEach((item) => {
+      // items.forEach((item) => {
+      //   all.innerHTML += getCard(item);
+      //   books.push({ ...item, selected: false });
+      // });
+      books = items.map((item) => {
         all.innerHTML += getCard(item);
-        books.push({ ...item, selected: false });
+        return { ...item, selected: false };
       });
       console.log(books);
     })
@@ -31,10 +35,10 @@ export const searchBook = (str) => {
   });
 };
 
-const close = document.querySelector("#close");
-close.addEventListener("click", () => {
-  all.innerHTML = "";
-  books.forEach((book) => {
-    all.innerHTML += getCard(book);
-  });
-});
+// const close = document.querySelector("#close");
+// close.addEventListener("click", () => {
+//   all.innerHTML = "";
+//   books.forEach((book) => {
+//     all.innerHTML += getCard(book);
+//   });
+// });
