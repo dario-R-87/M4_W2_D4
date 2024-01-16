@@ -32,7 +32,7 @@ export const empty = () => {
   showCart();
 };
 
-window.addCart = (event, id) => {
+export const addCart = (event, id) => {
   const indexCart = cart.findIndex((item) => item.asin === id);
   if (indexCart === -1) {
     const book = books.find((item) => item.asin === id);
@@ -53,7 +53,7 @@ window.addCart = (event, id) => {
   cartQt.innerHTML = "(" + cart.length + ")";
 };
 
-window.removeCart = (event, id) => {
+export const removeCart = (event, id) => {
   if (cart.findIndex((item) => item.asin === id >= 0)) {
     cart = cart.filter((book) => book.asin !== id);
     const index = books.findIndex((item) => item.asin === id);
