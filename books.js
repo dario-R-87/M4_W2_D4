@@ -16,9 +16,8 @@ export const getBooks = async (url) => {
     });
     addListener();
   } catch (err) {
-    console.error(err)
+    console.error(err);
   }
-
 };
 
 export const searchBook = (str) => {
@@ -27,8 +26,7 @@ export const searchBook = (str) => {
   });
   all.innerHTML = "";
   finded.forEach((item) => {
-    if(!item.skipped)
-      all.innerHTML += getCard(item);
+    if (!item.skipped) all.innerHTML += getCard(item);
   });
   addListener();
 };
@@ -44,11 +42,23 @@ const skip = (event) => {
   cardWrapper.classList.add("d-none");
 };
 
-const addListener = ()=>{
+export const addListener = () => {
   const skipBtns = document.querySelectorAll(".skip");
-  skipBtns.forEach(skipBtn=>skipBtn.addEventListener("click",()=>{skip(event)}));
+  skipBtns.forEach((skipBtn) =>
+    skipBtn.addEventListener("click", () => {
+      skip(event);
+    })
+  );
   const addBtns = document.querySelectorAll(".add");
-  addBtns.forEach(addBtn=>addBtn.addEventListener("click",()=>{addCart(event,addBtn.id.substring(3))}));
+  addBtns.forEach((addBtn) =>
+    addBtn.addEventListener("click", () => {
+      addCart(event, addBtn.id.substring(3));
+    })
+  );
   const remBtns = document.querySelectorAll(".rem");
-  remBtns.forEach(remBtn=>remBtn.addEventListener("click",()=>{removeCart(event,remBtn.id.substring(3))}));
-}
+  remBtns.forEach((remBtn) =>
+    remBtn.addEventListener("click", () => {
+      removeCart(event, remBtn.id.substring(3));
+    })
+  );
+};

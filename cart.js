@@ -1,4 +1,4 @@
-import { books } from "./books.js";
+import { books, addListener } from "./books.js";
 import { getCard } from "./cards.js";
 
 let cart = [];
@@ -27,8 +27,9 @@ export const empty = () => {
   search.value = "";
   books.forEach((book) => {
     book.selected = false;
-    all.innerHTML += getCard(book);
+    if (!book.skipped) all.innerHTML += getCard(book);
   });
+  addListener();
   showCart();
 };
 
