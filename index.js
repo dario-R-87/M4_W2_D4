@@ -4,6 +4,10 @@ import { searchBook } from "./books.js";
 
 document.documentElement.style.setProperty("--bs-primary-rgb", "150,221,188");
 document.documentElement.style.setProperty("--bs-bg-opacity", "0.8");
+document.documentElement.style.setProperty(
+  "--bs-link-color-rgb",
+  "255,255,255"
+);
 
 const url = "https://striveschool-api.herokuapp.com/books";
 
@@ -20,3 +24,8 @@ search.addEventListener("keyup", () => {
 
 const emptyBtn = document.querySelector("#empty");
 emptyBtn.addEventListener("click", empty);
+
+const x_input = document.querySelector("#search");
+x_input.addEventListener("click", () => {
+  searchBook("");
+});

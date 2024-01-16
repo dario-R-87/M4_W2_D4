@@ -20,6 +20,18 @@ export const getBooks = async (url) => {
   }
 };
 
+// export const getBook = async (url) => {
+//   const book_details = document.querySelector("#book_details");
+
+//   try {
+//     const res = await fetch(url);
+//     const book = await res.json();
+//     book_details.innerHTML += getCard(book);
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
+
 export const searchBook = (str) => {
   const finded = books.filter((book) => {
     return book.title.toLowerCase().indexOf(str.trim().toLowerCase()) !== -1;

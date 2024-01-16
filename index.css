@@ -13,7 +13,8 @@ img {
 #cart,
 .skip,
 .add,
-.rem {
+.rem,
+.details {
   background-color: rgb(56, 146, 139) !important;
   font-size: 30px;
   display: flex;
@@ -21,14 +22,26 @@ img {
   justify-content: center;
 }
 
-h1 {
+h1,
+h2 {
   color: rgb(56, 146, 139) !important;
 }
 
 #cart span {
   font-size: 26px;
 }
-/* :root {
-  --bs-primary-rgb: 48, 74, 74;
-  --bs-bg-opacity: 0.5;
-} */
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+#img_detail {
+  width: 100%;
+}
