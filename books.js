@@ -27,13 +27,16 @@ export const searchBook = (str) => {
   });
   all.innerHTML = "";
   finded.forEach((item) => {
-    all.innerHTML += getCard(item);
+    if(!item.skipped)
+      all.innerHTML += getCard(item);
   });
   addListener();
 };
 
 const skip = (event) => {
-
+  const book_id = event.target.id.substring(3);
+  const index = books.findIndex((item) => item.asin === book_id);
+  books[index].skipped = true;
   let listItem = event.target.closest(".list-group-item");
   let listGroup = listItem.parentNode;
   let cardDiv = listGroup.parentNode;
