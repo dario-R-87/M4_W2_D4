@@ -8,12 +8,11 @@ document.documentElement.style.setProperty(
 );
 
 const origin =
-  window.location.protocol === "https:"
-    ? window.location.href
-    : window.location.origin + "/";
+  window.location.origin +
+  (window.location.protocol === "https:" ? +"/M4_W2_D4" : "");
 const home = document.querySelector("#home");
-console.log(origin);
-home.setAttribute("href", origin + "index.html");
+
+home.setAttribute("href", origin + "/index.html");
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
@@ -34,3 +33,13 @@ const getBook = async (url) => {
 };
 
 getBook(url);
+
+console.log("host: " + window.location.host);
+console.log("hostname: " + window.location.hostname);
+console.log("href: " + window.location.href);
+console.log("origin: " + window.location.origin);
+console.log("pathname: " + window.location.pathname);
+console.log("port: " + window.location.port);
+console.log("protocol: " + window.location.protocol);
+
+console.log(window.location.protocol === "http:");
