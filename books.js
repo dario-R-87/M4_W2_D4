@@ -5,7 +5,8 @@ export let books = [];
 
 export const getBooks = async (url) => {
   const all = document.querySelector("#all");
-
+  const loader = document.querySelector(".loader");
+  all.classList.add("d-none");
   try {
     const res = await fetch(url);
     books = await res.json();
@@ -15,6 +16,10 @@ export const getBooks = async (url) => {
       return { ...book, selected: false, skipped: false };
     });
     addListener();
+    setTimeout(function () {
+      loader.classList.remove("loader");
+      all.classList.remove("d-none");
+    }, 2000);
   } catch (err) {
     console.error(err);
   }

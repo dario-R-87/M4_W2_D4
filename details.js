@@ -21,12 +21,17 @@ const url = "https://striveschool-api.herokuapp.com/books/" + id;
 
 const getBook = async (url) => {
   const book_details = document.querySelector("#book_details");
-
+  const loader = document.querySelector(".loader");
+  book_details.classList.add("d-none");
   try {
     const res = await fetch(url);
     const book = await res.json();
     console.log(book);
     book_details.innerHTML += getDetails(book);
+    setTimeout(function () {
+      loader.classList.remove("loader");
+      book_details.classList.remove("d-none");
+    }, 2000);
   } catch (err) {
     console.error(err);
   }
