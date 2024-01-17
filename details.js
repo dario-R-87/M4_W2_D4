@@ -9,7 +9,7 @@ document.documentElement.style.setProperty(
 
 const origin =
   window.location.origin +
-  (window.location.protocol === "https:" ? +"/M4_W2_D4" : "");
+  (window.location.protocol === "https:" ? "/M4_W2_D4" : "");
 const home = document.querySelector("#home");
 
 home.setAttribute("href", origin + "/index.html");

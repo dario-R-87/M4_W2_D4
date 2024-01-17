@@ -1,6 +1,6 @@
 const origin =
   window.location.origin +
-  (window.location.protocol === "https:" ? +"/M4_W2_D4" : "");
+  (window.location.protocol === "https:" ? "/M4_W2_D4" : "");
 
 export const getCard = (book) => {
   return `
