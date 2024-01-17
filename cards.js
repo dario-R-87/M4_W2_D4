@@ -1,3 +1,6 @@
+const localUrl="http://127.0.0.1:5500/detail.html?id=";
+const pagesUrl="https://dario-r-87.github.io/M4_W2_D4/detail.html?id=";
+
 export const getCard = (book) => {
   return `
 	<div class="col-6 col-md-4 col-lg-3">
@@ -7,7 +10,7 @@ export const getCard = (book) => {
         } class="card-img-top" alt="image" /></div>
         <div class="card-body">
          <h5 class="card-title">${book.title}</h5>
-         <button id="details" class="details btn btn-primary"><a href="http://127.0.0.1:5500/detail.html?id=${
+         <button id="details" class="details btn btn-primary"><a href="${pagesUrl}${
            book.asin
          }">View Details</a></button>
         </div>
