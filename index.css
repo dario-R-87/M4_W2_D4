@@ -14,7 +14,8 @@ img {
 .skip,
 .add,
 .rem,
-.details {
+.details,
+.home {
   background-color: rgb(56, 146, 139) !important;
   font-size: 30px;
   display: flex;

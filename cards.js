@@ -39,7 +39,7 @@ export const getDetails = (book) => {
   <div class="col-6">
    <h2>Category: ${book.category}</h2>
    <h2>Asin Code: ${book.asin}</h2>
-   <h2>Price: $ ${book.price}</h2>
+   <h2>Price: $ ${book.price.toFixed(2)}</h2>
   </div>
   `;
 };
