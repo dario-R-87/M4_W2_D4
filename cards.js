@@ -1,4 +1,7 @@
-const origin=window.location.origin;
+const origin =
+  window.location.protocol === "https"
+    ? window.location.href
+    : window.location.origin;
 
 export const getCard = (book) => {
   return `
@@ -10,8 +13,8 @@ export const getCard = (book) => {
         <div class="card-body">
          <h5 class="card-title">${book.title}</h5>
          <button id="details" class="details btn btn-primary"><a href="${origin}/detail.html?id=${
-           book.asin
-         }">View Details</a></button>
+    book.asin
+  }">View Details</a></button>
         </div>
         <ul class="list-group list-group-flush">
         <li class="list-group-item d-flex justify-content-between fw-bold align-items-center">
