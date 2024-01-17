@@ -10,10 +10,10 @@ document.documentElement.style.setProperty(
 const origin =
   window.location.protocol === "https:"
     ? window.location.href
-    : window.location.origin;
+    : window.location.origin + "/";
 const home = document.querySelector("#home");
 console.log(origin);
-home.setAttribute("href", origin + "/index.html");
+home.setAttribute("href", origin + "index.html");
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");

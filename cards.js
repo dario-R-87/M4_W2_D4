@@ -1,7 +1,7 @@
 const origin =
   window.location.protocol === "https:"
     ? window.location.href
-    : window.location.origin;
+    : window.location.origin + "/";
 
 export const getCard = (book) => {
   return `
@@ -12,7 +12,7 @@ export const getCard = (book) => {
         } class="card-img-top" alt="image" /></div>
         <div class="card-body">
          <h5 class="card-title">${book.title}</h5>
-         <button id="details" class="details btn btn-primary"><a href="${origin}/detail.html?id=${
+         <button id="details" class="details btn btn-primary"><a href="${origin}detail.html?id=${
     book.asin
   }">View Details</a></button>
         </div>
