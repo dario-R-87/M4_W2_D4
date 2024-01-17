@@ -8,7 +8,7 @@ document.documentElement.style.setProperty(
 );
 
 const origin =
-  window.location.protocol === "https"
+  window.location.protocol === "https:"
     ? window.location.href
     : window.location.origin;
 const home = document.querySelector("#home");

@@ -37,3 +37,5 @@ console.log("origin: " + window.location.origin);
 console.log("pathname: " + window.location.pathname);
 console.log("port: " + window.location.port);
 console.log("protocol: " + window.location.protocol);
+
+console.log(window.location.protocol === "http:");
