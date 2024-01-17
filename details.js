@@ -7,6 +7,11 @@ document.documentElement.style.setProperty(
   "255,255,255"
 );
 
+const origin=window.location.origin;
+const home = document.querySelector("#home");
+console.log(origin);
+home.setAttribute("href", origin+"/index.html");
+
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 

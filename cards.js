@@ -1,5 +1,4 @@
-const localUrl="http://127.0.0.1:5500/detail.html?id=";
-const pagesUrl="https://dario-r-87.github.io/M4_W2_D4/detail.html?id=";
+const origin=window.location.origin;
 
 export const getCard = (book) => {
   return `
@@ -10,7 +9,7 @@ export const getCard = (book) => {
         } class="card-img-top" alt="image" /></div>
         <div class="card-body">
          <h5 class="card-title">${book.title}</h5>
-         <button id="details" class="details btn btn-primary"><a href="${pagesUrl}${
+         <button id="details" class="details btn btn-primary"><a href="${origin}/detail.html?id=${
            book.asin
          }">View Details</a></button>
         </div>

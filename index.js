@@ -29,3 +29,14 @@ const x_input = document.querySelector("#search");
 x_input.addEventListener("click", () => {
   searchBook("");
 });
+
+
+
+
+// console.log("host: "+window.location.host);
+// console.log("hostname: "+window.location.hostname);
+// console.log("href: "+window.location.href);
+// console.log("origin: "+window.location.origin);
+// console.log("pathname: "+window.location.pathname);
+// console.log("port: "+window.location.port);
+// console.log("protocol: "+window.location.protocol);
